@@ -5,6 +5,7 @@ __version__ = "1.0"
 from datetime import date
 from tuto01 import Personne
 from tuto01 import CompteBancaire
+from tuto01 import Calcul
 
 def main():
 
@@ -32,6 +33,14 @@ compte2.virement(compte1, 100000)
 print("apres virement")
 print(compte1)
 print(compte2)
+
+print(Calcul.addition(5, 6))
+print(Calcul.multiplication(5, 6))
+
+compte2.solde= -500
+print(compte2.solde)
+
+print(CompteBancaire.get_total_compte())
 
 
 # personne2 = Personne("Aminata", "ndiaye", date(1997, 6 , 25), "77 123 45 67", "Thies")

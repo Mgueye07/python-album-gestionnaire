@@ -43,6 +43,33 @@ class CompteBancaire:
         self.debiter(montant)
         compte.crediter(montant)
 
-        
+#getter et setter pour le solde 
+    @property
+    def solde(self):
+        return self._solde
+    @solde.setter
+    def solde(self, solde):
+        if solde<=0:
+            raise ValueError("le solde ne peut pas etre negatif")
+        self._solde=solde
+
+
+
     def __str__(self):
         return f"Numéro de comopte:{self.numero_compte} Titulaire:{self.titlaire} Solde:{self.solde} Type de compte:{self.type_compte}"
+    
+    @classmethod
+    def get_total_compte(cls):
+        """permet de retourner le nombre de compte cree"""
+        return cls.nombre_compte_cree
+    
+class Calcul:
+    """permet de faire des calculs mathematiques"""
+
+    @staticmethod
+    def addition(nombre1,nombre2):
+        return nombre1+nombre2
+    
+    @staticmethod
+    def multiplication(nombre1,nombre2):
+        return nombre1*nombre2
